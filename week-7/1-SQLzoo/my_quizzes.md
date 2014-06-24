@@ -1,15 +1,17 @@
 ## U3.W7: SQLZoo
 
-####I worked on this challenge [by myself, with: ].
+####I worked on this challenge by myself.
 
 
 
 ### My Quiz Results:
-<!-- Include the link to your image (saved in the imgs folder) to display it inline. -->
 
-
-
-
-
+<img src = "http://georgexzeng.github.io/images/sqlzoo1.png">
+<img src = "http://georgexzeng.github.io/images/sqlzoo2.png">
+<img src = "http://georgexzeng.github.io/images/sqlzoo3.png">
+<img src = "http://georgexzeng.github.io/images/sqlzoo5.png">
 
 ### Reflection
+
+Good intro to SQL.  Lot more advanced concepts I'm getting up to speed on
+including join and manipulations of multiple tables.  
