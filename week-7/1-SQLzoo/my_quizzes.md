@@ -6,6 +6,7 @@
 
 ### My Quiz Results:
 
+<a href="http://georgexzeng.github.io/images/sqlzoo1.png"> Quiz 1 on SQL Zoo</a>
 <img src = "http://georgexzeng.github.io/images/sqlzoo1.png">
 <img src = "http://georgexzeng.github.io/images/sqlzoo2.png">
 <img src = "http://georgexzeng.github.io/images/sqlzoo3.png">
