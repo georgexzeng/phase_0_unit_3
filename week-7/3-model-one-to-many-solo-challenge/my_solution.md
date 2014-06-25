@@ -2,9 +2,22 @@
 
 ## Release 0: Users Fields
 <!-- Identify the fields Twitter collects data for -->
+1. name
+2. handle
+3. location
+4. link
+5. join date
+6. header photo
+7. profile photo
+8. tweets
+9. tweet photos
+10. followers
+11. followed by
 
 ## Release 1: Tweet Fields
 <!-- Identify the fields Twitter uses to represent/display a tweet. What are you required or allowed to enter? -->
+
+
 
 ## Release 2: Explain the relationship
 The relationship between `users` and `tweets` is: 
