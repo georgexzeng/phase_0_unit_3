@@ -16,11 +16,29 @@ end
 
 def print_longest_serving_reps(minimum_years)  #sorry guys, oracle needs me, i didn't finish this!
   puts "LONGEST SERVING REPRESENTATIVES"
-  puts $db.execute("SELECT name FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  longest_reps =  $db.execute("SELECT name, years_in_congress FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  longest_reps.each {|x, y| puts "#{x} - #{y}"}
 end
 
-def print_lowest_grade_level_speakers
-  puts "LOWEST GRADE LEVEL SPEAKERS (less than < 8th grade)"
+def print_lowest_grade_level_speakers(lowest_year)
+  puts "LOWEST GRADE LEVEL SPEAKERS (less than < #{lowest_year} grade)"
+  puts $db.execute("SELECT name FROM congress_members WHERE grade_current<#{lowest_year} ORDER BY grade_current ASC")
+end
+
+# New Jersey, New York, Maine, Florida, Alaska
+# NJ, NY, ME, FL, AK
+
+# def print_state_senators(states_list)
+# 	puts "Senators from the following states:"
+# 	puts $db.execute("SELECT name FROM congress_members WHERE location IN (#{states_list}")
+# end
+
+def print_senator_state(*state)
+ states = *state
+ puts "SENATORS AND THE STATE THEY REPRESENT"
+ states.each {|state| 
+ 	my_info = $db.execute("SELECT name, location FROM congress_members WHERE location='#{state}'")
+ 	my_info.each {|name, state| puts "#{name} - #{state}"}}
 end
 
 def print_separator
@@ -39,10 +57,13 @@ print_longest_serving_reps(35)
 # output should look like:  Rep. C. W. Bill Young - 41 years
 
 print_separator
-print_lowest_grade_level_speakers 
+print_lowest_grade_level_speakers(8)
 # TODO - Need to be able to pass the grade level as an argument, look in schema for "grade_current" column
 
 # TODO - Make a method to print the following states representatives as well:
+
+print_senator_state("NJ", "NY", "ME", "FL", "AK")
+
 # (New Jersey, New York, Maine, Florida, and Alaska)
 
 
