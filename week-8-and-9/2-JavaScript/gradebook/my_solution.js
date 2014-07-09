@@ -7,7 +7,7 @@ variables match (i.e., 'Joseph' is the first element in students; his scores are
 
 Do not alter the students and scores code.
 
-I worked on this challenge [by myself, with:]
+I worked on this challenge by myself
 
 */
 
@@ -20,35 +20,59 @@ var scores = [ [80, 70, 70, 100],
 
 
 
-
-
-
 // __________________________________________
 // Write your code below.
 
+// var average = function(myArray) {
+//   var my_sum = 0;
+//   for(var i = 0; i<myArray.length; i++){
+//     my_sum = my_sum + myArray[i];
+//   }
+//   return my_sum/myArray.length;
+// }
 
-
-
-
+// var gradebook = {
+//   Joseph:{testScores:scores[0]}, 
+//   Susan:{testScores:scores[1]}, 
+//   William:{testScores:scores[2]}, 
+//   Elizabeth:{testScores: scores[3]}, 
+//   addScore: function(myName, myScore) {
+//     gradebook[myName].testScores.push(myScore);
+//   },
+//   getAverage: function(myName) {
+//     return average(gradebook[myName].testScores);
+//   }
+// };
 
 // __________________________________________
 // Refactored Solution
 
+var average = function(myArray){
+  return myArray.reduce(function(a, b){
+    return a+b;
+  })/myArray.length;
+}
 
+var gradebook={};
 
+students.forEach(function(myName){
+  gradebook[myName]={};
+  gradebook[myName].testScores=scores[students.indexOf(myName)];
+})
+ 
+gradebook.addScore = function(myName, myScore) {
+    gradebook[myName].testScores.push(myScore);
+  }
 
-
-
-
+gradebook.getAverage = function(myName) {
+    return average(gradebook[myName].testScores);
+  }
 
 // __________________________________________
 // Reflect
 
-
-
-
-
-
+// Challenging mainly because I was beggining to forget javascript!  Was very helpful to go back
+// and look through documentation and be refreshed on how JS works!
 
 
 
